@@ -1,9 +1,15 @@
 import './App.css';
-import Dashboard from './component/dashboard/Dashboard'
+import Login from './component/login/Login';
+import Dashboard from './component/dashboard/Dashboard';
 function App() {
+  const auth = true;
   return (
     <div className="App">
-     <Dashboard/>
+      {
+        (auth)?<Dashboard />:<Login/>
+      }
+      
+      
     </div>
   );
 }
