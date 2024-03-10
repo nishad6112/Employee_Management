@@ -1,45 +1,48 @@
 import React, { useState } from 'react';
-import Header from '../dashboard/Header';
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Login submitted with:', { email, password });
-  };
+import { Form, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-  return (
-    <div>
-       <Header/>
-    <div className="login">
-     
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <button type="submit">Login</button>
-      </form>
-      </div>
-      </div>
-  );
+
+const Login = () => {
+    // State to hold login credentials
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    // Function to handle form submission
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Add your login logic here
+        console.log("Email:", email);
+        console.log("Password:", password);
+    };
+
+    return (
+        <div className="container ">
+            <div className="row justify-content-center ">
+                <div className="col-md-6 ">
+                    <h2 className="text-center mb-4 ">Login</h2>
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                            </Form.Text>
+                        </Form.Group>
+
+                        <Form.Group controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        </Form.Group>
+
+                        <Button className="mt-3" variant="dark" type="submit"  block>
+                            Submit
+                        </Button>
+                    </Form>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default Login;
