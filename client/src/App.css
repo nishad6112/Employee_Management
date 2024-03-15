@@ -13,12 +13,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.login span{
-  margin-left: 50px;
-}
-.sp {
-  margin-left: 40px;
-}
+
 
 .login h2 {
   text-align: center;
@@ -629,10 +624,23 @@ dd {
   padding: 0 1rem;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 .small-container {
-  max-width: 800px;
+  
+  max-width: 600px;
+  background-color: #808181;
+  border-radius: 10px;
+  border-color: #333;
+  box-shadow: #333;
+  
+}
+
+.small-container h1{
+   padding: 20px;
+  margin-top: 50px;
+  text-align: center;
 }
 
 .medium-container {
